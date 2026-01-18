@@ -26,6 +26,7 @@ export const profileQuery = groq`*[_type == "profile"][0]{
     alt,
   },
   shortBio,
+  shortBio2,
   location,
   fullBio,
   email,
