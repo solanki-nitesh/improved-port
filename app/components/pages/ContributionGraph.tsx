@@ -8,14 +8,48 @@ import { getGitHubYears } from "@/app/utils/calculate-years";
 import EmptyState from "../shared/EmptyState";
 import { IoIosAnalytics } from "react-icons/io";
 
+// Hook to get responsive block size based on screen width
+function useResponsiveBlockSize() {
+  const [blockSize, setBlockSize] = useState(13);
+
+  useEffect(() => {
+    // Only run on client side
+    if (typeof window === "undefined") return;
+
+    const updateBlockSize = () => {
+      if (window.innerWidth < 640) {
+        // Mobile: smaller blocks
+        setBlockSize(8);
+      } else if (window.innerWidth < 768) {
+        // Small tablets
+        setBlockSize(10);
+      } else if (window.innerWidth < 1024) {
+        // Tablets
+        setBlockSize(11);
+      } else {
+        // Desktop
+        setBlockSize(13);
+      }
+    };
+
+    updateBlockSize();
+    window.addEventListener("resize", updateBlockSize);
+    return () => window.removeEventListener("resize", updateBlockSize);
+  }, []);
+
+  return blockSize;
+}
+
 export default function ContributionGraph() {
+  const today = new Date().getFullYear();
   const [calendarYear, setCalendarYear] = useState<number | undefined>(
-    undefined
+    today
   );
   const { theme, systemTheme } = useTheme();
   const [serverTheme, setServerTheme] = useState<"light" | "dark" | undefined>(
     undefined
   );
+  const blockSize = useResponsiveBlockSize();
   const scheme =
     theme === "light" ? "light" : theme === "dark" ? "dark" : systemTheme;
 
@@ -24,8 +58,6 @@ export default function ContributionGraph() {
   useEffect(() => {
     setServerTheme(scheme);
   }, [scheme]);
-
-  const today = new Date().getFullYear();
   const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME;
   const joinYear = Number(process.env.NEXT_PUBLIC_GITHUB_JOIN_YEAR);
   const years = getGitHubYears(joinYear);
@@ -40,18 +72,23 @@ export default function ContributionGraph() {
     );
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="flex xl:flex-row flex-col gap-6 items-center justify-center w-full">
-        <div className="dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 p-8 rounded-xl shadow-lg max-w-fit max-h-fit hover:shadow-xl transition-shadow duration-300">
-          <GitHubCalendar
-            username={username}
-            theme={github}
-            colorScheme={serverTheme}
-            blockSize={13}
-            year={calendarYear}
-          />
+    <div className="flex flex-col items-center w-full px-4 sm:px-6">
+      <div className="flex xl:flex-row flex-col gap-4 sm:gap-6 items-center justify-center w-full max-w-full">
+        <div className="dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 p-4 sm:p-6 md:p-8 rounded-xl shadow-lg max-w-full overflow-x-auto hover:shadow-xl transition-shadow duration-300">
+          <div className="min-w-fit">
+            <GitHubCalendar
+              username={username}
+              theme={github}
+              colorScheme={serverTheme}
+              blockSize={blockSize}
+              year={calendarYear}
+              style={{
+                maxWidth: "100%",
+              }}
+            />
+          </div>
         </div>
-        <div className="flex justify-center xl:flex-col flex-row flex-wrap gap-2">
+        <div className="flex justify-center xl:flex-col flex-row flex-wrap gap-2 w-full xl:w-auto">
           {/* Display only the last five years */}
           {years.slice(0, 5).map((year) => (
             <YearButton
