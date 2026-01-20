@@ -16,7 +16,7 @@ const inter = Inter({
 });
 
 const options = {
-  title: "Nitesh Solanki | Software Developer",
+  title: "Nitesh Solanki",
   description:
     "Nitesh Solanki is a Software Developer and Technical Writer who is passionate about building solutions and contributing to open source communities",
   url: "https://niteshsolanki.com",
