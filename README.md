@@ -1,5 +1,5 @@
 <div align="center">
-<a href="https://niteshsolanki.com"><img src="./public/logo.png" width="60px"></a>
+<a href="https://niteshsolanki.com"><img src="https://raw.githubusercontent.com/solanki-nitesh/improved-port/main/public/logo.png" width="60px"></a>
 </div>
 
 <div align="center">
@@ -104,8 +104,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 [reactrefractor]: https://github.com/rexxars/react-refractor
 [site]: https://niteshsolanki.com
 [studio]: https://niteshsolanki.com/studio
-[studio-preview]: https://github.com/solanki-nitesh/improved-port/assets/studio-preview.png
-[site-preview]: https://github.com/solanki-nitesh/improved-port/assets/site-preview.png
+[studio-preview]: https://raw.githubusercontent.com/solanki-nitesh/improved-port/main/public/studio.png
+[site-preview]: https://raw.githubusercontent.com/solanki-nitesh/improved-port/main/public/site.png
 [localhost]: http://localhost:3000
 [localhost-studio]: http://localhost:3000/studio
 [github]: https://github.com/solanki-nitesh
