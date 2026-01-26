@@ -7,6 +7,23 @@
 <p>My personal portfolio website</p>
 </div>
 
+## About
+
+**niteshsolanki.com** is a modern, responsive personal portfolio website showcasing my work, projects, blog posts, and professional journey. Built with Next.js and Sanity CMS, it features a clean design with dark/light theme support, smooth animations, and a fully integrated content management system.
+
+### Website Features
+
+- 🏠 **Home Page**: Personal introduction, GitHub contribution graph, work experience, story timeline, technologies stack, and featured projects
+- 📖 **About Page**: Detailed bio, resume download, skills, and professional background
+- 💼 **Projects Page**: Showcase of work projects and side projects with detailed descriptions
+- 📝 **Blog**: Technical articles and personal stories with syntax highlighting and comments
+- 📸 **Photos**: Photo gallery (under construction)
+- 🎨 **Dark/Light Theme**: System preference detection with manual toggle
+- 📱 **Responsive Design**: Fully optimized for mobile, tablet, and desktop
+- ⚡ **Performance**: Optimized with Next.js App Router, server-side rendering, and image optimization
+- 🔍 **SEO Optimized**: Meta tags, Open Graph, and structured data
+- 📊 **Analytics**: Integrated with Umami for privacy-focused analytics
+
 # Tech Stack
 
 - [NextJS][nextjs] - UI framework
@@ -22,6 +39,17 @@
 | [Site][site]          | [Studio][studio]                 |
 | --------------------- | -------------------------------- |
 | ![Site][site-preview] | ![Sanity Studio][studio-preview] |
+
+### Key Sections
+
+- **Profile Section**: Animated introduction with GitHub contribution calendar
+- **Work Experience**: Timeline of professional roles and achievements
+- **Story Timeline**: Career journey and milestones
+- **Technologies**: Stack of technologies and tools I work with
+- **Work Projects**: Professional projects including IIoT platforms, mobile apps, and web applications
+- **Side Projects**: Personal projects and open-source contributions
+- **Blog Posts**: Technical writing and articles with code syntax highlighting
+- **Contact**: Social links and ways to get in touch
 
 ## Run Project Locally
 
@@ -81,6 +109,22 @@ npm run build
 | `app/studio/[[...index]]/page.tsx`             | Where Sanity Studio is mounted                  |
 | `schemas`                                      | Where Sanity Studio gets its content types from |
 | `lib/sanity.query.ts`                          | Groq query for Sanity Schema data               |
+| `app/components/pages/`                        | Page-specific components (Job, Projects, etc.) |
+| `app/components/shared/`                       | Reusable UI components                          |
+| `app/components/global/`                       | Global components (Navbar, Footer, Theme)       |
+| `app/data/`                                    | Static data files (work projects, social links) |
+
+## Features & Highlights
+
+- ✨ **Smooth Animations**: Framer Motion powered page transitions and scroll animations
+- 🎯 **Type Safety**: Full TypeScript implementation
+- 📝 **Content Management**: Sanity CMS for easy content updates
+- 🔄 **ISR (Incremental Static Regeneration)**: Fast page loads with on-demand revalidation
+- 💬 **Comments**: Giscus integration for blog post discussions
+- 🎨 **Custom Fonts**: Incognito and GitLab Mono font families
+- 📱 **Mobile Menu**: Responsive navigation with mobile-optimized menu
+- 🎁 **Easter Eggs**: Hidden interactive elements
+- 📊 **GitHub Integration**: Live contribution graph display
 
 ## License
 
