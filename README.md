@@ -34,11 +34,13 @@
 - [Next Themes][nexttheme]: Color Theme
 - [React Refractor][reactrefractor]: Syntax Highlighting
 
+<!-- Project Overview - Uncomment when portfolio images are ready
 ## Project Overview
 
 | [Site][site]          | [Studio][studio]                 |
 | --------------------- | -------------------------------- |
 | ![Site][site-preview] | ![Sanity Studio][studio-preview] |
+-->
 
 ### Key Sections
 
