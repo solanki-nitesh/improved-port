@@ -2,89 +2,110 @@
 import { motion } from "framer-motion";
 
 type TimelineEvent = {
-  year: string;
+  period: string;
   title: string;
   description?: string;
 };
 
 const timelineEvents: TimelineEvent[] = [
   {
-    year: "2025",
-    title: "Full Stack Lead + Technical Lead + Gen AI Developer",
+    period: "2025",
+    title: "Full Stack Lead | Technical Lead | GenAI Developer",
+    description:
+      "Leading full-stack and technical initiatives while working on GenAI solutions using OpenAI and Gemini APIs, focusing on scalable and intelligent systems.",
   },
   {
-    year: "2024",
-    title: "Full Stack Lead + DevOps Lead",
+    period: "2024",
+    title: "Full Stack Lead | DevOps Lead",
+    description:
+      "Led full-stack development and DevOps practices, managing CI/CD pipelines, cloud infrastructure, and team delivery across projects.",
   },
   {
-    year: "2023",
+    period: "2023",
     title: "Senior Full Stack Developer",
+    description:
+      "Worked on complex backend architectures, serverless solutions, and automated deployments while mentoring team members.",
   },
   {
-    year: "2022",
+    period: "2022",
     title: "Full Stack Developer",
+    description:
+      "Delivered scalable full-stack applications, collaborated closely with cross-functional teams, and strengthened cloud-based implementations.",
   },
   {
-    year: "2021",
-    title: "Full Stack Developer + Intern Mentor",
+    period: "2021",
+    title: "Full Stack Developer | Intern Mentor",
+    description:
+      "Contributed to production systems while mentoring interns and guiding them through real-world project development.",
   },
   {
-    year: "2020",
+    period: "2020",
     title: "Full Stack Developer",
+    description:
+      "Built and maintained full-stack features, improved performance, and supported production deployments.",
   },
   {
-    year: "July 2019",
+    period: "July 2019",
     title: "Junior Full Stack Developer",
-    description: "Promoted as Junior Full Stack Developer",
+    description:
+      "Promoted to Junior Full Stack Developer after successful internship, taking ownership of backend and frontend modules.",
   },
   {
-    year: "Jan 2019",
+    period: "Jan 2019",
     title: "Full Stack Intern",
-    description: "Joined Solvative as Full Stack Intern (back then it was called Quark Studios)",
+    description:
+      "Joined Solvative (formerly Quark Studios) as a Full Stack Intern and worked on real-world applications and cloud-based solutions.",
   },
   {
-    year: "End of 2018",
+    period: "2018 (End)",
     title: "Placement Coordinator",
-    description: "Joined as Placement Coordinator in LD College of Engineering",
+    description:
+      "Served as Placement Coordinator at L.D. College of Engineering, supporting students and coordinating placement activities.",
   },
   {
-    year: "May 2018 - Jun 2018",
-    title: "Internship Trainee",
-    description: "Bhaskaracharya Institute For Space Applications and Geo-Informatics as Android Application Developer",
+    period: "May 2018 – June 2018",
+    title: "Internship Trainee (Android Developer)",
+    description:
+      "Completed an internship at Bhaskaracharya Institute for Space Applications and Geo-Informatics, working as an Android Application Developer.",
   },
   {
-    year: "2017",
+    period: "2017",
     title: "NSS Volunteer",
-    description: "Joined as NSS (National Service Scheme) Volunteer and worked as social worker",
+    description:
+      "Joined NSS (National Service Scheme) and actively participated in social and community service activities.",
   },
   {
-    year: "2016 End",
-    title: "Bachelor's Degree",
-    description: "Joined L.D. College of Engineering for Bachelor's in Information Technology",
+    period: "2016",
+    title: "Bachelor's Degree (Information Technology)",
+    description:
+      "Started Bachelor's degree in Information Technology at L.D. College of Engineering.",
   },
   {
-    year: "2016",
+    period: "2016",
     title: "Practical Project Development",
-    description: "L.E. College Morbi - LE Attendance System in PHP",
+    description:
+      "Developed LE Attendance System in PHP as part of academic project work.",
   },
   {
-    year: "2016",
-    title: "Diploma Engineering - Information Technology",
-    description: "Gold medalist with 10/10 CGPA",
+    period: "2016",
+    title: "Diploma Engineering (Information Technology)",
+    description: "Graduated as a Gold Medalist with 10/10 CGPA.",
   },
   {
-    year: "2014",
-    title: "Industrial Training Institute (ITI)",
-    description: "Training in Basic Computer Course",
+    period: "2014",
+    title: "ITI Training",
+    description:
+      "Completed Industrial Training Institute program in Basic Computer Course.",
   },
   {
-    year: "2013",
-    title: "Passed SSC",
+    period: "2013",
+    title: "SSC",
+    description: "Passed Secondary School Certificate examination.",
   },
   {
-    year: "1997",
+    period: "1997",
     title: "Born",
-    description: "This is when I was born",
+    description: "The journey began.",
   },
 ];
 
@@ -110,13 +131,13 @@ export default function StoryTimeline() {
         <div className="relative">
           {/* Animated background gradient */}
           <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 via-transparent to-blue-500/5 rounded-3xl blur-3xl"></div>
-          
+
           <div className="relative space-y-8">
             {timelineEvents.map((event, index) => {
               const isEven = index % 2 === 0;
               return (
                 <motion.div
-                  key={index}
+                  key={`${event.period}-${event.title}-${index}`}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, margin: "-50px" }}
@@ -130,8 +151,8 @@ export default function StoryTimeline() {
                           whileHover={{ scale: 1.1, rotate: 5 }}
                         >
                           <div className="relative z-10 w-20 h-20 md:w-24 md:h-24 mx-auto rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 dark:from-blue-600 dark:to-purple-700 shadow-lg shadow-blue-500/50 flex items-center justify-center transform rotate-[-3deg] hover:rotate-0 transition-transform duration-300">
-                            <span className="text-white font-bold text-sm md:text-base text-center leading-tight">
-                              {event.year}
+                            <span className="text-white font-bold text-sm md:text-base text-center leading-tight px-1">
+                              {event.period}
                             </span>
                           </div>
                         </motion.div>
@@ -143,8 +164,8 @@ export default function StoryTimeline() {
                     {/* Connecting line */}
                     <div className="flex-1 hidden md:block">
                       <div className={`h-0.5 bg-gradient-to-r ${
-                        isEven 
-                          ? "from-blue-500 via-purple-500 to-transparent" 
+                        isEven
+                          ? "from-blue-500 via-purple-500 to-transparent"
                           : "from-transparent via-purple-500 to-blue-500"
                       }`}></div>
                     </div>
@@ -157,12 +178,12 @@ export default function StoryTimeline() {
                         <div className="group relative">
                           {/* Glowing border effect */}
                           <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 rounded-xl opacity-0 group-hover:opacity-20 blur transition-opacity duration-300"></div>
-                          
+
                           {/* Main card */}
                           <div className="relative dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 bg-gradient-to-br from-white to-zinc-50 border dark:border-zinc-700 border-zinc-200 rounded-xl p-5 md:p-6 shadow-lg hover:shadow-2xl transition-all duration-300">
                             {/* Decorative corner accent */}
                             <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-500/10 to-transparent rounded-bl-full"></div>
-                            
+
                             <h3 className="text-lg md:text-xl font-bold dark:text-white text-zinc-900 mb-2 relative z-10">
                               {event.title}
                             </h3>
@@ -185,4 +206,3 @@ export default function StoryTimeline() {
     </section>
   );
 }
-
