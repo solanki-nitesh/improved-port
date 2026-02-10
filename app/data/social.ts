@@ -1,5 +1,7 @@
 import {
+  BiEnvelope,
   BiLinkExternal,
+  BiLogoFacebook,
   BiLogoCodepen,
   BiLogoGithub,
   BiLogoGitlab,
@@ -8,25 +10,19 @@ import {
   BiLogoStackOverflow,
   BiLogoSteam,
   BiLogoUnsplash,
+  BiLogoWhatsapp,
   BiLogoYoutube,
 } from "react-icons/bi";
 import { FaFreeCodeCamp, FaProductHunt } from "react-icons/fa";
-import { SiCodewars } from "react-icons/si";
+import { SiCodewars, SiMedium } from "react-icons/si";
 import { FaHashnode, FaHashtag, FaSquareXTwitter } from "react-icons/fa6";
 
 export const socialLinks = [
   {
-    id: 1,
-    name: "GitHub",
-    url: "https://github.com/solanki-nitesh",
-    icon: BiLogoGithub,
-    status: "social",
-  },
-  {
-    id: 2,
-    name: "X",
-    url: "https://x.com/solankiniteshs",
-    icon: FaSquareXTwitter,
+    id: 21,
+    name: "Email",
+    url: "mailto:solankiniteshs77@gmail.com",
+    icon: BiEnvelope,
     status: "social",
   },
   {
@@ -37,10 +33,24 @@ export const socialLinks = [
     status: "social",
   },
   {
-    id: 4,    
-    name: "Codepen",
-    url: "https://codepen.io/Nitesh_solanki_2300",
-    icon: BiLogoCodepen,
+    id: 18,
+    name: "WhatsApp",
+    url: "https://wa.me/919974742300",
+    icon: BiLogoWhatsapp,
+    status: "social",
+  },
+  {
+    id: 19,
+    name: "Facebook",
+    url: "https://www.facebook.com/",
+    icon: BiLogoFacebook,
+    status: "social",
+  },
+  {
+    id: 1,
+    name: "GitHub",
+    url: "https://github.com/solanki-nitesh",
+    icon: BiLogoGithub,
     status: "social",
   },
   {
@@ -48,6 +58,27 @@ export const socialLinks = [
     name: "Instagram",
     url: "https://instagram.com/nitesh.solanki_",
     icon: BiLogoInstagram,
+    status: "social",
+  },
+  {
+    id: 20,
+    name: "Medium",
+    url: "https://medium.com/@solankiniteshs77",
+    icon: SiMedium,
+    status: "social",
+  },
+  {
+    id: 2,
+    name: "X",
+    url: "https://x.com/solankiniteshs",
+    icon: FaSquareXTwitter,
+    status: "social",
+  },
+  {
+    id: 4,
+    name: "Codepen",
+    url: "https://codepen.io/Nitesh_solanki_2300",
+    icon: BiLogoCodepen,
     status: "social",
   },
   {
